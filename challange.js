@@ -1,5 +1,5 @@
 /*
- *CODING CHALLENGE 1 A
+ *CODING CHALLENGE 1 
  */
 /*
 Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
@@ -39,32 +39,33 @@ John and Mike both play basketball in different teams. In the latest 3 games, Jo
 5. Like before, change the scores to generate different winners, keeping in mind there might be draws.
 */
 
-var johnTeam = (89 + 120 + 103) / 3;
-var mikeTeam = (89 + 120 + 103) / 3;
-var maryTeam = (89 + 120 + 103) / 3;
-//  with if else
-if (johnTeam > mikeTeam && johnTeam > maryTeam) {
-  console.log("John's team win!!!");
-  console.log("Average of John's team score = " + johnTeam);
-} else if (mikeTeam > johnTeam && mikeTeam > maryTeam) {
-  console.log("Mike's team win!!!");
-  console.log("Average of Mike's team score = " + mikeTeam);
-} else if (maryTeam > johnTeam && maryTeam > mikeTeam) {
-  console.log("Mary's team win!!!");
-  console.log("Average of Mary's team score = " + maryTeam);
-} else if (mikeTeam === johnTeam && (!mikeTeam === johnTeam) === maryTeam) {
-  console.log("Mike's team and John's team draw");
-  console.log("Average of Mike's and John's team  score = " + mikeTeam);
-} else if (mikeTeam === maryTeam && (!mikeTeam === johnTeam) === maryTeam) {
-  console.log("Mike's team and Mary's team draw");
-  console.log("Average of Mike's and Mary's team  score = " + mikeTeam);
-} else if (maryTeam === johnTeam && (!mikeTeam === johnTeam) === maryTeam) {
-  console.log("Mary's team and John's team draw");
-  console.log("Average of Mary's and John's team  score = " + maryTeam);
-} else {
-  console.log("Mary's , Mike's and John's team draw");
-  console.log("Average of Mary's, Mike's and John's team  score = " + maryTeam);
-}
+// var johnTeam = (89 + 120 + 103) / 3;
+// var mikeTeam = (89 + 120 + 103) / 3;
+// var maryTeam = (89 + 120 + 103) / 3;
+// //  with if else
+// if (johnTeam > mikeTeam && johnTeam > maryTeam) {
+//     console.log("John's team win!!!");
+//     console.log("Average of John's team score = " + johnTeam);
+// } else if (mikeTeam > johnTeam && mikeTeam > maryTeam) {
+//     console.log("Mike's team win!!!");
+//     console.log("Average of Mike's team score = " + mikeTeam);
+// } else if (maryTeam > johnTeam && maryTeam > mikeTeam) {
+//     console.log("Mary's team win!!!");
+//     console.log("Average of Mary's team score = " + maryTeam);
+// } else if (mikeTeam === johnTeam && (!mikeTeam === johnTeam) === maryTeam) {
+//     console.log("Mike's team and John's team draw");
+//     console.log("Average of Mike's and John's team  score = " + mikeTeam);
+// } else if (mikeTeam === maryTeam && (!mikeTeam === johnTeam) === maryTeam) {
+//     console.log("Mike's team and Mary's team draw");
+//     console.log("Average of Mike's and Mary's team  score = " + mikeTeam);
+// } else if (maryTeam === johnTeam && (!mikeTeam === johnTeam) === maryTeam) {
+//     console.log("Mary's team and John's team draw");
+//     console.log("Average of Mary's and John's team  score = " + maryTeam);
+// } else {
+//     console.log("Mary's , Mike's and John's team draw");
+//     console.log("Average of Mary's, Mike's and John's team  score = " + maryTeam);
+// }
+
 // with switch
 // switch (true) {
 //     case johnTeam > mikeTeam:
@@ -79,3 +80,30 @@ if (johnTeam > mikeTeam && johnTeam > maryTeam) {
 //         console.log("Average of Mike's and John's team  score = " + mikeTeam);
 //         break;
 // }
+
+/*
+ *CODING CHALLENGE 3
+ */
+
+function calculator(bill) {
+    if (bill < 50) {
+        percentage = 0.2;
+    } else if (bill > 50 && bill < 200) {
+        percentage = 0.15;
+    } else {
+        percentage = 0.1;
+    }
+    return bill * percentage;
+}
+
+var bills = [20, 100, 200];
+var tips = [calculator(bills[0]),
+    calculator(bills[1]),
+    calculator(bills[2])
+];
+
+var total = [tips[0] + bills[0],
+    tips[1] + bills[1],
+    tips[2] + bills[2]
+];
+console.log(tips, total);

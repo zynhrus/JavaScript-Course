@@ -1,4 +1,4 @@
-/* ***************************
+/* ******************************************************************
  * Variable and data types
  */
 
@@ -28,7 +28,7 @@
 // var john / mark = 'John and Mark';  *gk boleh variable di tengahnya tanda baca
 // var if = 23; *gk boleh variable namanya keyword (if,delte,function,dll)
 
-/* ********************************
+/* ****************************************************************
  * Variable mutation and type coercion
  * coercion artinya mengubah bentuk variable menjadi string
  */
@@ -54,7 +54,7 @@
 // var lastName = prompt('What is his last name?');
 // console.log(firstName + " " + lastName);
 
-/* *******************************
+/* *****************************************************************
  * Basic Operators
  */
 // var year, yearJohn, yearMark;
@@ -83,7 +83,7 @@
 // var x;
 // console.log(typeof x);
 
-/**********************************
+/*************************************************************
  * Operator precendence
  */
 
@@ -114,7 +114,7 @@
 // x--;
 // console.log(x);
 
-/**********************************
+/*************************************************************
  * if / else statements
  */
 
@@ -144,7 +144,7 @@
 //     console.log("John's BMI is higher than Mark's");
 // }
 
-/***********************************
+/*******************************************************************
  * Boolean logic
  */
 
@@ -161,7 +161,7 @@
 //     console.log(firstName + " is a man.");
 // }
 
-/**************************************** 
+/***************************************************************** 
  * The Ternary Operator and Switch Statements
  * Ternary operator digunakan untuk menggantikan if else
  * di gunakan untuk conditional yg simpel 
@@ -235,6 +235,90 @@
 //     console.log('The == operators does type coercion!');
 // }
 
-/************************************************* 
- *
+/************************************************************** 
+ * Function
+ * Dont't Repeat Yourself (DRY)
  */
+
+// function calculateAge(yearBirth) {
+//     return 2018 - yearBirth;
+// }
+
+// var ageAlbert = calculateAge(2002);
+// var ageJake = calculateAge(1950);
+// var ageJohn = calculateAge(1990);
+// console.log(ageAlbert, ageJake, ageJohn);
+
+// function yearsUntilRetirement(year, firstName) {
+//     var age = calculateAge(year);
+//     var retirement = 65 - age;
+
+//     if (retirement > 0) {
+//         console.log(firstName + ' retires in ' + retirement + ' years.');
+//     } else {
+//         console.log(firstName + ' is already retired ');
+//     }
+
+// }
+
+// yearsUntilRetirement(2002, 'Albert');
+// yearsUntilRetirement(1950, 'Jake');
+// yearsUntilRetirement(1990, 'John');
+
+/*****************************************************************
+ * Function Statements and Expressions
+ */
+
+//  Function declaration
+// function whatDoYouDo(job, firstName) {}
+
+// Function expression
+// var whatDoYouDo = function (job, firstName) {
+//     switch (job) {
+//         case 'teacher':
+//             return firstName + ' teaches kids how to code.';
+//         case 'driver':
+//             return firstName + ' drives a cab in Lisbon.';
+//         case 'designer':
+//             return firstName + ' design beautiful website.';
+//         default:
+//             return firstName + ' does something else.';
+//     }
+// }
+
+// console.log(whatDoYouDo('teacher', 'Albert'));
+// console.log(whatDoYouDo('driver', 'John'));
+// console.log(whatDoYouDo('retired', 'Mark'));
+
+/*****************************************************************
+ * Arrays
+ */
+
+//  Initialize new array
+var names = ['Albert', 'John', 'Mark'];
+var years = new Array(2002, 1990, 1968);
+
+console.log(names[2]);
+console.log(names.length);
+
+// Mutate array data
+names[1] = 'Ben';
+names[names.length] = 'Mary';
+console.log(names);
+
+// Diffrent data types
+var albert = ['Albert', 'Smith', 2002, 'student', false];
+
+albert.push('blue');
+albert.unshift('Mr.');
+console.log(albert);
+
+albert.pop();
+albert.pop();
+albert.shift();
+console.log(albert);
+
+console.log(albert.indexOf(23));
+
+var isDesigner = albert.indexOf('designer') === -1 ? 'Albert is NOT a designer' : 'Albert IS a designer';
+console.log(isDesigner);
