@@ -1,5 +1,5 @@
-/*
- *CODING CHALLENGE 1 
+/****************************************************************
+ *CODING CHALLENGE 1
  */
 /*
 Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
@@ -27,7 +27,7 @@ Mark and John are trying to compare their BMI (Body Mass Index), which is calcul
 // var isHigher = johnBMI < markBMI;
 // console.log("Is Mark's BMI higher than John's? " + isHigher);
 
-/*
+/****************************************************************
  *CODING CHALLENGE 2
  */
 /*
@@ -81,29 +81,131 @@ John and Mike both play basketball in different teams. In the latest 3 games, Jo
 //         break;
 // }
 
-/*
+/****************************************************************
  *CODING CHALLENGE 3
  */
 
-function calculator(bill) {
-    if (bill < 50) {
+// function calculator(bill) {
+//     if (bill < 50) {
+//         percentage = 0.2;
+//     } else if (bill > 50 && bill < 200) {
+//         percentage = 0.15;
+//     } else {
+//         percentage = 0.1;
+//     }
+//     return bill * percentage;
+// }
+
+// var bills = [20, 100, 200];
+// var tips = [calculator(bills[0]),
+//     calculator(bills[1]),
+//     calculator(bills[2])
+// ];
+
+// var total = [tips[0] + bills[0],
+//     tips[1] + bills[1],
+//     tips[2] + bills[2]
+// ];
+// console.log(tips, total);
+
+/****************************************************************
+ *CODING CHALLENGE 4
+ */
+// var john = {
+//   fullName: "John Smith",
+//   mass: 70,
+//   height: 1.79,
+//   calcBMI: function() {
+//     this.BMI = this.mass / (this.height * this.height);
+//     return this.BMI;
+//   }
+// };
+
+// var mark = {
+//   fullName: "Mark Thompson",
+//   mass: 70,
+//   height: 1.78,
+//   calcBMI: function() {
+//     this.BMI = this.mass / (this.height * this.height);
+//     return this.BMI;
+//   }
+// };
+
+// john.calcBMI();
+// mark.calcBMI();
+// console.log(john, mark);
+
+// if (john.BMI > mark.BMI) {
+//   console.log(john.fullName + " Win!!! With BMI = " + john.BMI);
+// } else if (john.BMI < mark.BMI) {
+//   console.log(mark.fullName + " " + " Win!!! With BMI = " + mark.BMI);
+// } else {
+//   console.log(
+//     mark.fullName +
+//       " " +
+//       " And " +
+//       john.fullName +
+//       " " +
+//       "draw!!! With BMI = " +
+//       john.BMI
+//   );
+// }
+
+/****************************************************************
+ *CODING CHALLENGE 5
+ */
+
+//  My First TRY (FAILED) !!!
+// var john = {
+//   name: 'john',
+//   bills: [10, 100, 200],
+//   calcTips: function () {
+//     for (var i = 0; i < this.bills.length; i++) {
+//       if (this.bills[i] < 50) {
+//         this.percentage = 0.2;
+//       } else if (this.bills[i] > 50 && this.bills[i] < 200) {
+//         this.percentage = 0.15;
+//       } else {
+//         this.percentage = 0.1;
+//       }
+//       console.log(this.tip = (this.bills[i] * this.percentage));
+//     }
+//   },
+//   calcTotal: function () {
+//     for (var i = 0; i < this.bills.length; i++) {
+//       console.log(this.total = (this.tip[i] + this.bills[i]));
+//     }
+//   }
+// };
+// john.calcTips();
+// john.calcTotal();
+
+// The solution 
+var john = {
+  name: 'john',
+  bills: [10, 100, 200],
+  calcTips: function () {
+    // Determine percentage based on tipping rules
+    this.tips = []
+    this.total = []
+
+    for (var i = 0; i < this.bills.length; i++) {
+      var percentage;
+      var bill = this.bills[i];
+
+      if (bill < 50) {
         percentage = 0.2;
-    } else if (bill > 50 && bill < 200) {
+      } else if (bill > 50 && bill < 200) {
         percentage = 0.15;
-    } else {
+      } else {
         percentage = 0.1;
+      }
+
+      // Add results to the corresponing arrays
+      this.tips[i] = percentage * bill;
+      this.total[i] = bill + percentage * bill;
     }
-    return bill * percentage;
-}
-
-var bills = [20, 100, 200];
-var tips = [calculator(bills[0]),
-    calculator(bills[1]),
-    calculator(bills[2])
-];
-
-var total = [tips[0] + bills[0],
-    tips[1] + bills[1],
-    tips[2] + bills[2]
-];
-console.log(tips, total);
+  }
+};
+john.calcTips();
+console.log(john);

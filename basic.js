@@ -295,30 +295,121 @@
  */
 
 //  Initialize new array
-var names = ['Albert', 'John', 'Mark'];
-var years = new Array(2002, 1990, 1968);
+// var names = ['Albert', 'John', 'Mark'];
+// var years = new Array(2002, 1990, 1968);
 
-console.log(names[2]);
-console.log(names.length);
+// console.log(names[2]);
+// console.log(names.length);
 
 // Mutate array data
-names[1] = 'Ben';
-names[names.length] = 'Mary';
-console.log(names);
+// names[1] = 'Ben';
+// names[names.length] = 'Mary';
+// console.log(names);
 
 // Diffrent data types
+// var albert = ['Albert', 'Smith', 2002, 'student', false];
+
+// albert.push('blue');
+// albert.unshift('Mr.');
+// console.log(albert);
+
+// albert.pop();
+// albert.pop();
+// albert.shift();
+// console.log(albert);
+
+// console.log(albert.indexOf(23));
+
+// var isDesigner = albert.indexOf('designer') === -1 ? 'Albert is NOT a designer' : 'Albert IS a designer';
+// console.log(isDesigner);
+
+/*****************************************************************
+ * Objects and properties
+ */
+
+//  Object literal
+// var john = {
+//     firstName: 'John',
+//     lastName: 'Smith',
+//     birthYear: 1990,
+//     family: ['Jane', 'Mark', 'Bob', 'Emily'],
+//     job: 'teacher',
+//     isMarried: false
+// };
+
+// console.log(john.firstName);
+// console.log(john['lastName']);
+// var x = 'birthYear';
+// console.log(john[x]);
+
+// john.job = 'designer';
+// john['isMarried'] = true;
+// console.log(john);
+
+// new Object syntax
+// var jane = new Object();
+// jane.firstName = 'Jane';
+// jane.birthYear = 1969;
+// jane['lastName'] = 'Smith';
+// console.log(jane);
+
+/*****************************************************************
+ * Objects and methods
+ */
+
+// var john = {
+//     firstName: 'John',
+//     lastName: 'Smith',
+//     birthYear: 1990,
+//     family: ['Jane', 'Mark', 'Bob', 'Emily'],
+//     job: 'teacher',
+//     isMarried: false,
+//     calcAge: function () {
+//         this.age = 2018 - this.birthYear;
+//     }
+// };
+
+// john.calcAge();
+// console.log(john);
+
+/*****************************************************************
+ * Loops and iteration
+ */
+// for (var i = 0; i < 10; i++) {
+//     console.log(i);
+// }
+
+// i = 0, 0 < 10 true, log i to console, i++
+// i = 1, 1 < 10 true, log i to console, i++
+// ...
+// i = 9, 9 < 10 true, log i to console, i++
+// i = 10, 10 < 10 FLASE, exit the loop!
+
+// For loop
+// var albert = ['Albert', 'Smith', 2002, 'student', false];
+// for (var i = 0; i < albert.length; i++) {
+//     console.log(albert[i]);
+// }
+
+// While loop
+// var i = 0;
+// while (i < albert.length) {
+//     console.log(albert[i]);
+//     i++
+// }
+
+// continue and break statements
 var albert = ['Albert', 'Smith', 2002, 'student', false];
+for (var i = 0; i < albert.length; i++) {
+    if (typeof albert[i] !== 'string') continue; //continue = dilanjutin
+    console.log(albert[i]);
+}
 
-albert.push('blue');
-albert.unshift('Mr.');
-console.log(albert);
+for (var i = 0; i < albert.length; i++) {
+    if (typeof albert[i] !== 'string') break; //break = diberentiin
+    console.log(albert[i]);
+}
 
-albert.pop();
-albert.pop();
-albert.shift();
-console.log(albert);
-
-console.log(albert.indexOf(23));
-
-var isDesigner = albert.indexOf('designer') === -1 ? 'Albert is NOT a designer' : 'Albert IS a designer';
-console.log(isDesigner);
+for (var i = albert.length - 1; i >= 0; i--) {
+    console.log(albert[i]);
+}
