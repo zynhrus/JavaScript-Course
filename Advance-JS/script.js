@@ -129,20 +129,20 @@ console.log(rates);
 */
 
 // Lecture: Function returning functions
-
+/*
 function interviewQuestion(job) {
     if (job === 'teacher') {
         return function (name) {
             console.log(name + ', what subject do you teach?');
-        }
+        };
     } else if (job === 'designer') {
         return function (name) {
             console.log(name + ', can you explain what UX is?');
-        }
+        };
     } else {
         return function (name) {
             console.log(name + ', what do you do?');
-        }
+        };
     }
 }
 
@@ -157,3 +157,55 @@ designerQuestion('Jazz');
 
 interviewQuestion('teacher')('Mark');
 interviewQuestion('designer')('Mike');
+*/
+
+// Function expression (IIFE) for private data
+
+// function game() {
+//     var score = Math.random() * 10;
+//     console.log(score >= 5);
+// }
+// game();
+// Same as above
+/*
+(function () {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+})();
+
+(function (goodLuck) {
+    var score = Math.random() * 10;
+    console.log(score >= 5 - goodLuck);
+})(5);
+*/
+
+// Closures
+function retirement(retirementAge) {
+    var a = ' years left until retirement';
+    return function (yearOfBirth) {
+        var age = 2018 - yearOfBirth;
+        console.log(retirementAge - age + a);
+    };
+}
+
+retirementUS = retirement(66);
+retirementIndonesia = retirement(60);
+retirementGermany = retirement(65);
+retirementUS(1990);
+retirementIndonesia(1990);
+retirementGermany(1990);
+
+function interviewQuestion(job) {
+    return function (name) {
+        if (job === 'teacher') {
+            console.log(name + ', what subject do you teach?');
+        } else if (job === 'designer') {
+            console.log(name + ', can you explain what UX is?');
+        } else {
+            console.log(name + ', what do you do?');
+        }
+    };
+}
+
+interviewTeacher = interviewQuestion('teacher');
+interviewTeacher('John');
